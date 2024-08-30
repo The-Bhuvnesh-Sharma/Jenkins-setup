@@ -1,9 +1,9 @@
 job("node js project ver 2"){
     description("this project will clone node js proj and build and push it to docker hub")
      scm {
-        git('https://github.com/mukeshphulwani66/simple-node-proj.git','main') { node -> 
-            node / gitConfigName('mukeshphulwani66')
-            node / gitConfigEmail('mukeshphulwani66@gmail.com')
+        git('https://github.com/The-Bhuvnesh-Sharma/Jenkins-setup.git','master') { node -> 
+            node / gitConfigName('The-Bhuvnesh-Sharma')
+            node / gitConfigEmail('bhuvi844964@gmail.com')
         }
     }
     wrappers {
@@ -16,7 +16,7 @@ job("node js project ver 2"){
         shell('npm install')
         shell('docker login -u ${USERNAME_DOC} -p ${PASS_DOC}')
         dockerBuildAndPublish {
-            repositoryName('mukeshphulwani66/nodejs-jenkins-demo')
+            repositoryName('sharmaji232001/nodejs-jenkins-demo')
             tag('${BUILD_NUMBER}')
             registryCredentials('dockerhubcred')
             forcePull(false)
