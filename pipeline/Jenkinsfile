@@ -39,7 +39,7 @@ node {
 //         stage('preparation') {
 //             steps {
 //                 echo 'cloning repo'
-//                 git url: 'https://github.com/The-Bhuvnesh-Sharma/Jenkins-setup.git', branch: 'master'
+//                 git url: 'https://github.com/The-Bhuvnesh-Sharma/Jenkins-setup.git', branch: 'main'
 //             }
 //         }
 //         stage('SonarQube Analysis') {
