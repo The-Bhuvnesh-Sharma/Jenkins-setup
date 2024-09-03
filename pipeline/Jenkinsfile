@@ -3,7 +3,7 @@
 // node {
 //   stage('preperation'){
 //     echo 'cloning repo'
-//     git url:'https://github.com/mukeshphulwani66/simple-node-proj.git',branch:'main'
+//     git url:'https://github.com/The-Bhuvnesh-Sharma/Jenkins-setup.git',branch:'main'
 //   }
 //   stage('test'){
 //     echo 'running test cases'
@@ -14,12 +14,12 @@
 //   }
 //   stage('build'){
 //     echo 'building image'
-//     sh 'docker build -t mukeshphulwani66/pipelinedemo:${BUILD_NUMBER} .'
+//     sh 'docker build -t sharmaji232001/pipelinedemo:${BUILD_NUMBER} .'
 //   }
 //   stage('deploy to docker hub'){
 //     withCredentials([usernamePassword(credentialsId: 'dockerhubcred', usernameVariable: 'USERNAME_DOC', passwordVariable: 'PASSWORD_DOC')]) {
 //        sh 'docker login -u ${USERNAME_DOC} -p ${PASSWORD_DOC}'
-//        sh 'docker image push mukeshphulwani66/pipelinedemo:${BUILD_NUMBER}'
+//        sh 'docker image push sharmaji232001/pipelinedemo:${BUILD_NUMBER}'
 //    }
 //   }
 //    stage('cleanup'){
@@ -32,14 +32,14 @@
 pipeline {
     agent any
     environment { 
-        IMAGE_NAME_DOC = "mukeshphulwani66/pipelinedemo:${BUILD_NUMBER}"
+        IMAGE_NAME_DOC = "sharmaji232001/pipelinedemo:${BUILD_NUMBER}"
         scannerHome =  tool 'SonarScanner';
     }
     stages {
         stage('preparation') {
             steps {
                 echo 'cloning repo'
-                git url: 'https://github.com/mukeshphulwani66/simple-node-proj.git', branch: 'main'
+                git url: 'https://github.com/The-Bhuvnesh-Sharma/Jenkins-setup.git', branch: 'master'
             }
         }
         stage('SonarQube Analysis') {
